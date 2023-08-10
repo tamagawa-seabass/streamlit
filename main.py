@@ -1,4 +1,4 @@
-import streamlit as st
+﻿import streamlit as st
 import numpy as np
 import pandas as pd
 from PIL import Image
@@ -54,7 +54,7 @@ for i in range(100):
 
 
 """
-# 章
+# TAMAGAWA SEABASS SECRET BASE
 ## 節
 ### 項
 
