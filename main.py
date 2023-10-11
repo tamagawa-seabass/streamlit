@@ -1,4 +1,5 @@
-﻿import suntime
+﻿!pip install suntime
+import suntime
 from suntime import Sun
 import datetime
 import streamlit as st
