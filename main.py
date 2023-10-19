@@ -1,17 +1,11 @@
-﻿!pip install suntime
-import suntime
-from suntime import Sun
-import datetime
-import streamlit as st
-from datetime import timedelta
+﻿import streamlit as st
 
 
-sun=Sun(35.534230,139.779020)
-sunrise=sun.get_local_sunrise_time()
-sunset=sun.get_local_sunset_time()
+import torch
+from transformers import pipeline
 
-# タイムゾーンを考慮して時刻を修正
-sunrise += datetime.timedelta(hours=9)
-sunset += datetime.timedelta(hours=9)
+generate_text = pipeline(model="databricks/dolly-v2-3b", torch_dtype=torch.bfloat16, trust_remote_code=True, device_map="auto")
 
-st.write(f"{sunrise.hour}{sunrise.minute}")
+output=generate_text("What is biggest fish in the world? Anwer me in less than 10 words. ")
+
+st.write(output)
